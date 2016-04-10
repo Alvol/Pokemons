@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemons App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+
+    <link rel='stylesheet prefetch'
+          href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.css'>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css"/>
+    <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.0-rc2/docs.css'>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src='lib/angular.js'></script>
+    <script src='lib/angular-animate.min.js'></script>
+    <script src='lib/angular-route.min.js'></script>
+    <script src='lib/angular-aria.min.js'></script>
+    <script src='lib/angular-messages.min.js'></script>
+    <script src='lib/svg-assets-cache.js'></script>
+    <script src='lib/angular-material.js'></script>
+
+    <script src="js/pokedexApp.js"></script>
+
+
+</head>
+
+<body ng-app="MyApp" ng-controller="pokedexApp">
+<header class="header"><h1 class="headerTitle">{{title}}</h1></header>
+<div class="gridListdemoBasicUsage">
+    <md-grid-list md-cols="3"
+                  md-row-height="250px">
+
+        <md-grid-tile class="element" ng-repeat="pokemon in pokemons.objects">
+            <div>
+                <div class="avatar" ng-click="pokemonClick(pokemon, $event)">
+                    <img ng-src='http://pokeapi.co/media/img/{{pokemon.pkdx_id}}.png'>
+                </div>
+                <p class="name">{{pokemon.name}}</p>
+                <div class="types">
+                    <div ng-repeat="type in pokemon.types" ng-class="getTypeClass(type.name)">{{type.name}}</div>
+                </div>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
+    <input type="button" class="bigBlueButton" value="Load More"
+           ng-click="loadMore(pageIndex)" ng-show="pokemons" ng-disabled="loading"
+           ng-model="selectedPokemon"/>
+</div>
+<div class="detailsView" ng-show="selectedPokemon">
+    <div class="avatarBig">
+        <img ng-src='http://pokeapi.co/media/img/{{selectedPokemon.pkdx_id}}.png'>
+        <p class="detailName">{{selectedPokemon.name+" #"+selectedPokemon.pkdx_id}}</p>
+        <div class="table">
+            <div class="tableRow">
+                <div class="typeDetails">Type: </div>
+                <div ng-class="getDetailsClass($last)" ng-repeat="type in selectedPokemon.types">{{type.name}}</div></div>
+            <div class="tableRow clear">Attack: {{selectedPokemon.attack}}</div>
+            <div class="tableRow">Defense: {{selectedPokemon.defense}}</div>
+            <div class="tableRow">HP: {{selectedPokemon.hp}}</div>
+            <div class="tableRow">SP Attack: {{selectedPokemon.sp_atk}}</div>
+            <div class="tableRow">SP Defense: {{selectedPokemon.sp_def}}</div>
+            <div class="tableRow">Speed: {{selectedPokemon.speed}}</div>
+            <div class="tableRow">Weight: {{selectedPokemon.weight}}</div>
+            <div class="tableRow">Total moves: {{selectedPokemon.moves.length}}</div>
+        </div>
+
+    </div>
+</div>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
+</body>
+</html>

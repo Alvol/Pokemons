@@ -1,0 +1,168 @@
+.header {
+    margin-left: 25%;
+    margin-right: 45%;
+}
+
+.headerTitle {
+    width: 100%;
+    padding-left: 50%;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+.gridListdemoBasicUsage md-grid-list {
+    width: 600px;
+    margin: 8px;
+}
+
+.gridListdemoBasicUsage .element {
+    width: auto;
+    background: #fff;
+    border-style: solid;
+    border-width: thin;
+    border-color: aqua;
+}
+
+.avatar {
+    position: relative;
+    margin-bottom: 0px;
+    margin-left: 20%;
+    width: 120px;
+    height: 120px;
+}
+
+.avatarBig {
+     position: relative;
+     margin-bottom: 0px;
+     margin-left: 25%;
+     width: 200px;
+     height: 200px;
+ }
+
+.name {
+    width: 200px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 0px;
+    margin-left: 35%;
+}
+
+.detailName {
+    width: 200px;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 0px;
+    margin-left: 35%;
+}
+
+.type {
+    float: left;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    border-radius: 5px;
+    font-weight: normal;
+}
+
+.type::first-letter{
+    text-transform: uppercase;
+}
+
+.normal {
+    background: greenyellow;
+}
+
+.fire {
+    background: red;
+}
+
+.poison {
+    background: purple;
+}
+
+.electric {
+    background: orange;
+}
+
+.water {
+    background: aqua;
+}
+
+.grass {
+    background: green;
+}
+
+.bug {
+    background: yellow;
+}
+
+.ground {
+    background: sandybrown;
+}
+
+.fairy {
+    background: #ff5cf4;
+}
+
+.flying {
+    background: skyblue;
+}
+
+.typeDetails {
+    float: left;
+    margin-right:2px;
+}
+
+
+.types {
+    margin-left: 20%;
+    margin-bottom: 0px;
+    width: 150px;
+}
+
+.bigBlueButton {
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 10px;
+    color: white;
+    width: 600px;
+    height: 100%;
+    background: cornflowerblue;
+    border-radius: 10px;
+}
+
+.detailsView {
+    border-style: dotted;
+    border-color: aqua;
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    left: 700px;
+    top: 60px;
+}
+
+.clear{
+    float: none;
+    display: block;
+}
+
+.table {
+    border-style: solid;
+    border-width: thin;
+    border-color: aqua;
+}
+
+.tableRow {
+    border-style: dashed;
+    border-width: thin;
+    border-color: aqua;
+}
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+*/
